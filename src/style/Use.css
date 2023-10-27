@@ -26,6 +26,7 @@
 }
 .products_card .products_card_box img:hover{
     scale: 1.02;
+    z-index: -1 ;
 }
 
 .products_card .products_card_box .price {
