@@ -7,21 +7,78 @@
     align-items: center;
     justify-content: space-between;
     /* position: static; */
-    background-color: #fff;
+    background-color: #ffffff;
+    z-index: 999;
+}
+
+.filters .logo_name h1 {
+    width: 45vw;
+    height: 40px;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.filters .input {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    font-size: 18px;
+    padding-left: 10px;
+    background: #f3f3f3;
 }
 
 .filters input {
-    width: 40%;
+    background: #f3f3f3;
+    width: 55vw;
     height: 40px;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.box_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.filters .selects {
+    display: none;
+    position: absolute;
+    right: 20px;
+    margin-top: 100px;
+    /* left: 0; */
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 10px .1px rgba(0, 0, 0, 0.453);
+}
+
+.toggle_filter {
+    display: block !important;
 }
 
 .filters .selects select {
-    width: 30%;
-    height: 20px;
+    cursor: pointer;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 33.3%;
+    height: 30px;
     font-size: 14px;
+    /* width: 100%; */
+    margin:  auto 0;
 }
+
 .filters .selects select option {
     font-size: 14px;
+    /* cursor: pointer; */
 }
 
 .filters .User_details img {
@@ -30,20 +87,22 @@
     border-radius: 50%;
 }
 
-.filters .card {
-    display: flex;
-}
-
 .filters .card div {
     padding-right: 10px;
-
-}
-.filters .card div {
-    padding-right: 10px;
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 20px;
     cursor: pointer;
 }
 
+.some_classes {
+    font-size: 24px !important;
+    cursor: pointer;
+}
+
+.some_classes_book {
+    font-size: 18px !important;
+    cursor: pointer;
+}
 
 .toggle_color {
     color: red;
@@ -55,39 +114,66 @@
 
 .toggle_block {
     display: block;
+    z-index: -1;
 }
 
-.toggle_color_bookMark{
+.toggle_color_bookMark {
     color: rgb(128, 0, 0);
+    font-size: 20px;
 }
 
 
+.header {
+    color: #000000;
+    padding: 20px;
+    transition: transform 0.8s ease;
+}
 
+.header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
+.some_classes {
+    font-size: 20px;
+}
 
-.book_mark_none{
+.book_mark_none {
     display: none;
 }
 
+.number {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+}
 
-.book_mark_none{
+.book_mark_none {
     display: none;
 }
 
-.toggle_block_bookMark{
+.toggle_block_bookMark {
     display: block;
 }
+.toggle_filter_color{
+    color: red;
+}
 
-.dot_bookmark{
+.dot_bookmark {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: red;
     position: absolute;
-    /* left: -12px; */
-    margin-left: 12px;
+    /* position: relative; */
+    margin-left: 15px;
+    margin-top: -27px;
     display: none;
 }
-.dot_bookmark_block{
+
+.dot_bookmark_block {
     display: block;
 }

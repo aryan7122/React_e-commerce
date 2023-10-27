@@ -70,8 +70,8 @@ const Use = () => {
 
                         <div className="products_card_box">
                             <img src={product.thumbnail} alt="" />
-                            <h2>{product.id}</h2>
                             <h2>{product.brand}</h2>
+                            <h2 className='description'>{product.description}</h2>
                             <div className='price'>
                                 <p>Price: ${product.price}</p>
                                 <h2>

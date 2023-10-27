@@ -1,12 +1,14 @@
 .book_mark{
-    min-width: 200px;
+    min-width: 300px;
     max-height: 500px;
     overflow-x: scroll;
     padding: 5px;
     position: absolute;
-    border: 1px solid red;
-    right: 1%;
-    top: 7%;
+    /* border: 1px solid red; */
+    box-shadow: 0px 0px 10px .1px rgba(0, 0, 0, 0.406);
+    right: 10px;
+    top: 57px;
+    /* z-index: 9; */
     background-color: #fff;
     scroll-behavior: smooth;
 }

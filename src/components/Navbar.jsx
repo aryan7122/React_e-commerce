@@ -6,15 +6,21 @@ import { setAddCardShow } from '../redux/slices/apiSlice';
 
 import '../style/navbar.css'
 import { BiSolidCartAdd } from 'react-icons/bi'
-import { BsFillBookmarkPlusFill } from 'react-icons/bs'
+import { BsFillBookmarkPlusFill, BsFillFilterCircleFill, BsSearch } from 'react-icons/bs'
 import AddCard from '../pages/AddCard';
 import products from './product.json'
 import Bookmark from '../pages/Bookmark';
 
+import Logo from '../assets/img/flipkart/flipkart.svg'
+
 const Navbar = () => {
+
+    const [isNavFixed, setNavFixed] = useState(false);
+
 
     const dispatch = useDispatch();
 
+    const [isFilter, setIsFilter] = useState(false);
     const [isToggledbm, setIsToggledbm] = useState(false);
     const [isToggled, setIsToggled] = useState(false);
 
@@ -73,6 +79,15 @@ const Navbar = () => {
         dispatch(setAddCardShow(arr));
     }, [add, dispatch]);
 
+    const filterToggle = () => {
+        if (isFilter) {
+            setIsFilter(false);
+        } else {
+            setIsFilter(true);
+            // alert('', isToggled)
+        }
+    };
+
     const toggleCartAdd = () => {
         if (isToggled) {
             setIsToggled(false);
@@ -82,6 +97,7 @@ const Navbar = () => {
 
         }
     };
+
     const toggleBookmark = () => {
         if (isToggledbm) {
             setIsToggledbm(false);
@@ -91,20 +107,43 @@ const Navbar = () => {
 
         }
     };
+    const handleScroll = () => {
+        if (window.scrollY >= 100) {
+            setNavFixed(true);
+        } else {
+            setNavFixed(false);
+        }
+    };
+
+    // scroll to fixed navbar
+    // Add an event listener to track the scroll position
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <div>
-            <div className='filters'>
-                <div>
-                    <h1>LOGO</h1>
+            <div className={`header filters  ${isNavFixed ? 'fixed' : ''}`}>
+                <div className='logo_name'>
+                    {/* <h1>Flipkart</h1> */}
+                    <img src={Logo} alt="" />
                 </div>
-                <input
-                    type="text"
-                    placeholder="Search by name"
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                />
-                <div className="selects">
+                <div className="input">
+                    <BsSearch />
+                    <input
+                        type="text"
+                        placeholder="Search by name"
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                    />
+                </div>
+
+                <div
+                    className={`selects  ${isFilter ? 'toggle_filter' : ''}`}
+                        >
                     <select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
                         <option value="all">All Prices</option>
                         <option value="50">Price less than $50</option>
@@ -133,31 +172,37 @@ const Navbar = () => {
                         <option value="other">Other</option>
                     </select>
                 </div>
-
-                <div className="card">
-                    <div className='icons'
-                        onClick={toggleBookmark}
-                        className={`some_classes_book ${isToggledbm ? 'toggle_color_bookMark' : ''}`}
-                    >
-                        <BsFillBookmarkPlusFill />
-                    </div>
-                    <span className={`dot_bookmark ${bookMakShow.length > 0 ? 'dot_bookmark_block' : ''}`}
-                    ></span>
-
-                    <div
-                        onClick={toggleCartAdd}
-                        className={`some_classes ${isToggled ? 'toggle_color' : ''}`}
-                    >
-                        <BiSolidCartAdd />
-                        {number}
-                    </div>
-                </div>
-
-                <div className="User_details">
-                    <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="" />
-                </div>
+            <div
+                    // className='filter'
+                    className={`filter  ${isFilter ? 'toggle_filter_color' : ''}`}
+                onClick={filterToggle}
+            >
+                <BsFillFilterCircleFill />
             </div>
 
+            <div className='icons'
+                onClick={toggleBookmark}
+                className={`some_classes_book ${isToggledbm ? 'toggle_color_bookMark' : ''}`}
+            >
+                <BsFillBookmarkPlusFill />
+                    <span className={`dot_bookmark ${bookMakShow.length > 0  ? 'dot_bookmark_block' : ''}`}
+                ></span>
+            </div>
+            <div
+                onClick={toggleCartAdd}
+                className={`some_classes ${isToggled ? 'toggle_color' : ''}`}
+            >
+                <BiSolidCartAdd />
+                <span className='number'>
+                    {number}
+                </span>
+            </div>
+
+            <div className="User_details">
+                <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="" />
+            </div>
+
+        </div>
             <div
                 className={`D_none ${isToggled ? 'toggle_block' : ''}`}
             >
@@ -168,7 +213,6 @@ const Navbar = () => {
             >
                 <Bookmark />
             </div>
-
         </div>
 
     );
