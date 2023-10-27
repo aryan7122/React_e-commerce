@@ -1,0 +1,63 @@
+.card_add {
+    min-width: 200px;
+    max-height: 500px;
+    overflow-x: scroll;
+    padding: 5px;
+    position: absolute;
+    border: 1px solid red;
+    right: 1%;
+    top: 7%;
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.card_add::-webkit-scrollbar {
+    display: none;
+}
+
+.price_add {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.count {
+    display: flex;
+}
+
+.count button:nth-child(1) {
+    width: 30px;
+    height: 20px;
+    background: red;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.count div:nth-child(2) {
+    width: 30px;
+    height: 20px;
+    background: rgb(139, 139, 139);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.count button:nth-child(3) {
+    width: 30px;
+    height: 20px;
+    background: rgb(24, 227, 20);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}

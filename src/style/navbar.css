@@ -1,0 +1,93 @@
+.filters {
+    width: 100%;
+    box-shadow: 0px 0px 5px 1px rgb(140, 140, 140);
+    height: 56px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    /* position: static; */
+    background-color: #fff;
+}
+
+.filters input {
+    width: 40%;
+    height: 40px;
+}
+
+.filters .selects select {
+    width: 30%;
+    height: 20px;
+    font-size: 14px;
+}
+.filters .selects select option {
+    font-size: 14px;
+}
+
+.filters .User_details img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.filters .card {
+    display: flex;
+}
+
+.filters .card div {
+    padding-right: 10px;
+
+}
+.filters .card div {
+    padding-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.toggle_color {
+    color: red;
+}
+
+.D_none {
+    display: none;
+}
+
+.toggle_block {
+    display: block;
+}
+
+.toggle_color_bookMark{
+    color: rgb(128, 0, 0);
+}
+
+
+
+
+
+.book_mark_none{
+    display: none;
+}
+
+
+.book_mark_none{
+    display: none;
+}
+
+.toggle_block_bookMark{
+    display: block;
+}
+
+.dot_bookmark{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    /* left: -12px; */
+    margin-left: 12px;
+    display: none;
+}
+.dot_bookmark_block{
+    display: block;
+}
