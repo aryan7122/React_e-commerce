@@ -10,6 +10,8 @@ const apiSlice = createSlice({
         addCardShow: [],
         bookMakShow: [],
         toggleBlock:'',
+        productPageRedux:'',
+        productData:[],
     },
     reducers: {
         setApiData: (state, action) => {
@@ -31,8 +33,14 @@ const apiSlice = createSlice({
         setBookMakShow: (state, action) => {
             state.bookMakShow = action.payload; // Update the number in the state
         },
+        setProductPageRedux: (state, action) => {
+            state.productPageRedux = action.payload; // Update the number in the state
+        },
+        setProductData: (state, action) => {
+            state.productData = action.payload; // Update the number in the state
+        },
     },
 });
 
-export const { setApiData, setFilteredData, setNumber, setAddCardShow, seToggleBlock, setBookMakShow } = apiSlice.actions;
+export const { setApiData, setFilteredData, setNumber, setAddCardShow, seToggleBlock, setBookMakShow, setProductPageRedux, setProductData } = apiSlice.actions;
 export default apiSlice.reducer;

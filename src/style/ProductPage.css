@@ -1,0 +1,24 @@
+.pageDetails_main {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    padding: 50px;
+}
+.card_details{
+    display: flex;
+}
+.card_details div{
+    margin-left: 20px;
+    line-height: 40px;
+}
+.card_details div img{
+    width: 100%;
+    height: 400px;
+}
+
+.price_{
+    display: flex;
+}
+.price_ h3{
+    margin-left: 20px;
+}

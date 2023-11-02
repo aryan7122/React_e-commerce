@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 const AddCard = () => {
   const [count, setCount] = useState(0);
   const [priceAdded, setPriceAdded] = useState([]);
-  console.log('priceAdded', priceAdded)
+  // console.log('priceAdded', priceAdded)
   
   // const arr = []
-  console.log('count', count)
+  // console.log('count', count)
   // setCount(arr)
   // arr.push([])
 

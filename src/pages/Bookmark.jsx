@@ -18,7 +18,7 @@ const Bookmark = () => {
     }, []);
 
     const productsObject = { products };
-    console.log(productsObject)
+    // console.log(productsObject)
 
     const arr = []
     useEffect(() => {
@@ -40,11 +40,11 @@ const Bookmark = () => {
             ) : (
                 bookMakShow.map((product) => (
                     <div key={product.id} className='products_card'>
-                            <img src={product.thumbnail} alt="" />
+                        <img src={product.thumbnail} alt="" />
                         <div className="title">
                             {/* <h2>{product.id}</h2> */}
                             <h2>{product.brand}</h2>
-                        <h2>Price: ${product.price}</h2>
+                            <h2>Price: ${product.price}</h2>
                         </div>
                         <hr />
                     </div>
